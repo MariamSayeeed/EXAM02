@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EXAM02
 {
-    internal class Answer
+    internal class Answer: ICloneable
     {
         public int AnswerId { get; set; }
         public string AnswerText { get; set; }
@@ -15,6 +15,16 @@ namespace EXAM02
         {
             AnswerId = answerId;
             AnswerText = answerText;
+        }
+
+        public override string ToString()
+        {
+            return $"->AnswerId: ({AnswerId}) AnswerText: {AnswerText}";
+        }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

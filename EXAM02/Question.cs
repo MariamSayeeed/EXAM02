@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EXAM02
 {
-    internal abstract class Question
+    internal abstract class Question : ICloneable, IComparable<Question>
     {
         public string Header { get; set; }
         public string Body { get; set; }
@@ -23,5 +23,20 @@ namespace EXAM02
         }
 
         public abstract void ShowQ();
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CompareTo(Question? other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"Header ({Header}) , Body: {Body}, Mark: {Mark}";
+        }
     }
 }

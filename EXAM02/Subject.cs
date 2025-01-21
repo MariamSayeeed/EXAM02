@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EXAM02
 {
-    internal class Subject
+    internal class Subject: ICloneable
     {
 
         public int SubjectId { get; set; }
@@ -28,6 +28,15 @@ namespace EXAM02
         {
             Console.WriteLine($"Subject ID: {SubjectId}  --- Subject NAme: {SubjectName}");
             Exam.ShowEx();
+        }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
+        }
+        public override string ToString()
+        {
+            return $"SubjectId: {SubjectId}, SubjectName: {SubjectName}";
         }
 
     }
